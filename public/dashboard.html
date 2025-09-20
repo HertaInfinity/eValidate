@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Legal Metrology Portal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="main-layout">
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container-fluid px-4">
+            <div class="d-flex justify-content-between align-items-center py-3">
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-shield-fill text-primary me-3" style="font-size: 2rem;"></i>
+                    <h1 class="navbar-brand mb-0 text-dark">
+                        Legal Metrology Compliance Checker
+                    </h1>
+                </div>
+                
+                <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center text-muted me-4">
+                        <i class="bi bi-person me-2"></i>
+                        <span class="small">user@example.com</span>
+                    </div>
+                    <a href="auth.html" class="d-flex align-items-center text-muted text-decoration-none">
+                        <i class="bi bi-box-arrow-right me-1"></i>
+                        <span class="small">Sign Out</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="p-4">
+                <ul class="nav flex-column sidebar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active d-flex align-items-center" href="dashboard.html">
+                            <i class="bi bi-house me-3"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" href="system-config.html">
+                            <i class="bi bi-gear me-3"></i>
+                            System Config
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" href="settings.html">
+                            <i class="bi bi-sliders me-3"></i>
+                            Settings
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="mb-4 d-flex justify-content-between align-items-center">
+                <h1 class="h2 fw-bold text-dark">Product Compliance Dashboard</h1>
+                <div class="text-muted small">
+                    6 products found
+                </div>
+            </div>
+
+            <!-- Search and Filter -->
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-8">
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="bi bi-search"></i>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Search products or manufacturers...">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="bi bi-funnel"></i>
+                                </span>
+                                <select class="form-select">
+                                    <option value="all">All Status</option>
+                                    <option value="compliant">Compliant</option>
+                                    <option value="non-compliant">Non-Compliant</option>
+                                    <option value="pending">Pending Review</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="row g-4">
+                <!-- Product 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card h-100">
+                        <img src="https://images.pexels.com/photos/264547/pexels-photo-264547.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                             class="card-img-top product-image" alt="Organic Honey">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div class="flex-grow-1">
+                                    <h5 class="card-title mb-1">Organic Honey</h5>
+                                    <p class="text-muted small mb-2">Nature's Best</p>
+                                </div>
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-muted">MRP:</span>
+                                    <span class="fw-medium">₹299</span>
+                                </div>
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-muted">Net Quantity:</span>
+                                    <span class="fw-medium">500g</span>
+                                </div>
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-muted">Country:</span>
+                                    <span class="fw-medium">India</span>
+                                </div>
+                                <div class="d-flex justify-content-between small">
+                                    <span class="text-muted">Platform:</span>
+                                    <span class="fw-medium">Amazon</span>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge status-compliant">COMPLIANT</span>
+                                <a href="report-form.html" class="btn btn-primary btn-sm">Generate Report</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card h-100">
+                        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                             class="card-img-top product-image" alt="Premium Tea">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div class="flex-grow-1">
+                                    <h5 class="card-title mb-1">Premium Tea</h5>
+                                    <p class="text-muted small mb-2">Tea Garden Co.</p>
+                                </div>
+                                <i class="bi bi-exclamation-triangle-fill text-warning"></i>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-muted">MRP:</span>
+                                    <span class="fw-medium">₹450</span>
+                                </div>
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-muted">Net Quantity:</span>
+                                    <span class="fw-medium">250g</span>
+                                </div>
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-muted">Country:</span>
+                                    <span class="fw-medium">India</span>
+                                </div>
+                                <div class="d-flex justify-content-between small">
+                                    <span class="text-muted">Platform:</span>
+                                    <span class="fw-medium">Flipkart</span>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge status-pending">PENDING</span>
+                                <a href="report-form.html" class="btn btn-primary btn-sm">Generate Report</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card h-100">
+                        <img src="https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                             class="card-img-top product-image" alt="Basmati Rice">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div class="flex-grow-1">
+                                    <h5 class="card-title mb-1">Basmati Rice</h5>
+                                    <p class="text-muted small mb-2">Royal Grains</p>
+                                </div>
+                                <i class="bi bi-x-circle-fill text-danger"></i>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-muted">MRP:</span>
+                                    <span class="fw-medium">₹180</span>
+                                </div>
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-muted">Net Quantity:</span>
+                                    <span class="fw-medium">1kg</span>
+                                </div>
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-muted">Country:</span>
+                                    <span class="fw-medium">India</span>
+                                </div>
+                                <div class="d-flex justify-content-between small">
+                                    <span class="text-muted">Platform:</span>
+                                    <span class="fw-medium">BigBasket</span>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge status-non-compliant">NON-COMPLIANT</span>
+                                <a href="report-form.html" class="btn btn-primary btn-sm">Generate Report</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card h-100">
+                        <img src="https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                             class="card-img-top product-image" alt="Cooking Oil">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div class="flex-grow-1">
+                                    <h5 class="card-title mb-1">Sunflower Oil</h5>
+                                    <p class="text-muted small mb-2">Golden Drop</p>
+                                </div>
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-muted">MRP:</span>
+                                    <span class="fw-medium">₹120</span>
+                                </div>
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-muted">Net Quantity:</span>
+                                    <span class="fw-medium">1L</span>
+                                </div>
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-muted">Country:</span>
+                                    <span class="fw-medium">India</span>
+                                </div>
+                                <div class="d-flex justify-content-between small">
+                                    <span class="text-muted">Platform:</span>
+                                    <span class="fw-medium">Grofers</span>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge status-compliant">COMPLIANT</span>
+                                <a href="report-form.html" class="btn btn-primary btn-sm">Generate Report</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card h-100">
+                        <img src="https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                             class="card-img-top product-image" alt="Wheat Flour">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div class="flex-grow-1">
+                                    <h5 class="card-title mb-1">Wheat Flour</h5>
+                                    <p class="text-muted small mb-2">Farm Fresh</p>
+                                </div>
+                                <i class="bi bi-exclamation-triangle-fill text-warning"></i>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-muted">MRP:</span>
+                                    <span class="fw-medium">₹45</span>
+                                </div>
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-muted">Net Quantity:</span>
+                                    <span class="fw-medium">1kg</span>
+                                </div>
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-muted">Country:</span>
+                                    <span class="fw-medium">India</span>
+                                </div>
+                                <div class="d-flex justify-content-between small">
+                                    <span class="text-muted">Platform:</span>
+                                    <span class="fw-medium">Amazon</span>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge status-pending">PENDING</span>
+                                <a href="report-form.html" class="btn btn-primary btn-sm">Generate Report</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card product-card h-100">
+                        <img src="https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                             class="card-img-top product-image" alt="Spice Mix">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div class="flex-grow-1">
+                                    <h5 class="card-title mb-1">Garam Masala</h5>
+                                    <p class="text-muted small mb-2">Spice King</p>
+                                </div>
+                                <i class="bi bi-check-circle-fill text-success"></i>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-muted">MRP:</span>
+                                    <span class="fw-medium">₹85</span>
+                                </div>
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-muted">Net Quantity:</span>
+                                    <span class="fw-medium">100g</span>
+                                </div>
+                                <div class="d-flex justify-content-between small mb-1">
+                                    <span class="text-muted">Country:</span>
+                                    <span class="fw-medium">India</span>
+                                </div>
+                                <div class="d-flex justify-content-between small">
+                                    <span class="text-muted">Platform:</span>
+                                    <span class="fw-medium">Flipkart</span>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge status-compliant">COMPLIANT</span>
+                                <a href="report-form.html" class="btn btn-primary btn-sm">Generate Report</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

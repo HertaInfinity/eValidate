@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Configuration - Legal Metrology Portal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="main-layout">
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container-fluid px-4">
+            <div class="d-flex justify-content-between align-items-center py-3">
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-shield-fill text-primary me-3" style="font-size: 2rem;"></i>
+                    <h1 class="navbar-brand mb-0 text-dark">
+                        Legal Metrology Compliance Checker
+                    </h1>
+                </div>
+                
+                <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center text-muted me-4">
+                        <i class="bi bi-person me-2"></i>
+                        <span class="small">user@example.com</span>
+                    </div>
+                    <a href="auth.html" class="d-flex align-items-center text-muted text-decoration-none">
+                        <i class="bi bi-box-arrow-right me-1"></i>
+                        <span class="small">Sign Out</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="p-4">
+                <ul class="nav flex-column sidebar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" href="dashboard.html">
+                            <i class="bi bi-house me-3"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active d-flex align-items-center" href="system-config.html">
+                            <i class="bi bi-gear me-3"></i>
+                            System Config
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" href="settings.html">
+                            <i class="bi bi-sliders me-3"></i>
+                            Settings
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h1 class="h2 fw-bold text-dark">System Configuration</h1>
+                    <p class="text-muted mt-2">Manage compliance rules for Legal Metrology validation</p>
+                </div>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRuleModal">
+                    <i class="bi bi-plus me-2"></i>
+                    Add Rule
+                </button>
+            </div>
+
+            <!-- Rules List -->
+            <div class="card">
+                <div class="card-body p-4">
+                    <h2 class="h5 fw-semibold text-dark mb-4">Active Rules</h2>
+                    
+                    <div class="space-y-4">
+                        <!-- Rule 1 -->
+                        <div class="rule-card">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div class="flex-grow-1">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <h3 class="h6 fw-medium text-dark mb-0 me-3">MRP Required</h3>
+                                        <span class="badge bg-success">Active</span>
+                                    </div>
+                                    
+                                    <div class="row g-3 small mb-2">
+                                        <div class="col-md-4">
+                                            <span class="text-muted">Field:</span>
+                                            <span class="ms-2 fw-medium">mrp</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="text-muted">Type:</span>
+                                            <span class="ms-2 fw-medium">Field must be present</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="text-muted">Value:</span>
+                                            <span class="ms-2 fw-medium">required</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="text-muted small mb-0">Ensures that all products have a valid MRP value</p>
+                                </div>
+                                
+                                <div class="d-flex align-items-center gap-2 ms-4">
+                                    <button class="btn btn-sm btn-outline-warning">Deactivate</button>
+                                    <button class="btn btn-sm btn-outline-primary">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rule 2 -->
+                        <div class="rule-card">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div class="flex-grow-1">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <h3 class="h6 fw-medium text-dark mb-0 me-3">Manufacturer Details Required</h3>
+                                        <span class="badge bg-success">Active</span>
+                                    </div>
+                                    
+                                    <div class="row g-3 small mb-2">
+                                        <div class="col-md-4">
+                                            <span class="text-muted">Field:</span>
+                                            <span class="ms-2 fw-medium">manufacturer</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="text-muted">Type:</span>
+                                            <span class="ms-2 fw-medium">Field must be present</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="text-muted">Value:</span>
+                                            <span class="ms-2 fw-medium">required</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="text-muted small mb-0">Validates that manufacturer information is provided</p>
+                                </div>
+                                
+                                <div class="d-flex align-items-center gap-2 ms-4">
+                                    <button class="btn btn-sm btn-outline-warning">Deactivate</button>
+                                    <button class="btn btn-sm btn-outline-primary">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rule 3 -->
+                        <div class="rule-card">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div class="flex-grow-1">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <h3 class="h6 fw-medium text-dark mb-0 me-3">Net Quantity Format</h3>
+                                        <span class="badge bg-success">Active</span>
+                                    </div>
+                                    
+                                    <div class="row g-3 small mb-2">
+                                        <div class="col-md-4">
+                                            <span class="text-muted">Field:</span>
+                                            <span class="ms-2 fw-medium">net_quantity</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="text-muted">Type:</span>
+                                            <span class="ms-2 fw-medium">Regex Pattern</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="text-muted">Value:</span>
+                                            <span class="ms-2 fw-medium">^\d+(\.\d+)?\s*(g|kg|ml|l)$</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="text-muted small mb-0">Ensures net quantity follows proper format with units</p>
+                                </div>
+                                
+                                <div class="d-flex align-items-center gap-2 ms-4">
+                                    <button class="btn btn-sm btn-outline-warning">Deactivate</button>
+                                    <button class="btn btn-sm btn-outline-primary">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rule 4 - Inactive -->
+                        <div class="rule-card inactive">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div class="flex-grow-1">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <h3 class="h6 fw-medium mb-0 me-3">Country Code Validation</h3>
+                                        <span class="badge bg-secondary">Inactive</span>
+                                    </div>
+                                    
+                                    <div class="row g-3 small mb-2">
+                                        <div class="col-md-4">
+                                            <span class="text-muted">Field:</span>
+                                            <span class="ms-2 fw-medium">country_of_origin</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="text-muted">Type:</span>
+                                            <span class="ms-2 fw-medium">Allowed Values List</span>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <span class="text-muted">Value:</span>
+                                            <span class="ms-2 fw-medium">India, USA, China, Germany</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <p class="text-muted small mb-0">Validates country of origin against allowed list</p>
+                                </div>
+                                
+                                <div class="d-flex align-items-center gap-2 ms-4">
+                                    <button class="btn btn-sm btn-outline-success">Activate</button>
+                                    <button class="btn btn-sm btn-outline-primary">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Rule Modal -->
+    <div class="modal fade" id="addRuleModal" tabindex="-1" aria-labelledby="addRuleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addRuleModalLabel">Add New Rule</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="rule_name" class="form-label fw-medium">Rule Name *</label>
+                            <input type="text" class="form-control" id="rule_name" placeholder="e.g., MRP Required" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="field_to_validate" class="form-label fw-medium">Field to Validate *</label>
+                            <select class="form-select" id="field_to_validate" required>
+                                <option value="">Select field</option>
+                                <option value="name">Product Name</option>
+                                <option value="manufacturer">Manufacturer</option>
+                                <option value="mrp">MRP</option>
+                                <option value="net_quantity">Net Quantity</option>
+                                <option value="country_of_origin">Country of Origin</option>
+                                <option value="consumer_care_details">Consumer Care Details</option>
+                                <option value="date_of_manufacture">Date of Manufacture</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="rule_type" class="form-label fw-medium">Rule Type *</label>
+                            <select class="form-select" id="rule_type" required>
+                                <option value="presence">Presence Check</option>
+                                <option value="regex">Regex Pattern</option>
+                                <option value="list">Allowed Values List</option>
+                                <option value="range">Numeric Range</option>
+                                <option value="custom">Custom Logic</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="rule_value" class="form-label fw-medium">Rule Value *</label>
+                            <input type="text" class="form-control" id="rule_value" placeholder="Rule configuration" required>
+                            <div class="form-text">
+                                <small class="text-muted">
+                                    For list: comma-separated values | For range: min-max (e.g., 0-1000) | For regex: pattern
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="description" class="form-label fw-medium">Description</label>
+                            <textarea class="form-control" id="description" rows="3" placeholder="Describe what this rule validates..."></textarea>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="is_active" checked>
+                            <label class="form-check-label" for="is_active">
+                                Rule is active
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">
+                        <i class="bi bi-save me-2"></i>
+                        Create Rule
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple form submission handler
+        document.querySelector('.modal-footer .btn-primary').addEventListener('click', function() {
+            alert('Rule created successfully!');
+            bootstrap.Modal.getInstance(document.getElementById('addRuleModal')).hide();
+        });
+    </script>
+</body>
+</html>
