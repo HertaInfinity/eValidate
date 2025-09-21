@@ -355,5 +355,29 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function addProduct() {
+            // Get form values
+            const productName = document.getElementById('productName').value;
+            const manufacturer = document.getElementById('manufacturer').value;
+            const mrp = document.getElementById('mrp').value;
+            const netQuantity = document.getElementById('netQuantity').value;
+            const countryOfOrigin = document.getElementById('countryOfOrigin').value;
+            const platform = document.getElementById('platform').value;
+            
+            // Basic validation
+            if (!productName || !manufacturer || !mrp || !netQuantity || !countryOfOrigin || !platform) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Show success message
+            alert(`Product "${productName}" has been added successfully!`);
+            
+            // Close modal and reset form
+            bootstrap.Modal.getInstance(document.getElementById('addProductModal')).hide();
+            document.getElementById('addProductForm').reset();
+        }
+    </script>
 </body>
 </html>

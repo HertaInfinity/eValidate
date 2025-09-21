@@ -72,14 +72,48 @@
                     Back to Dashboard
                 </a>
             </div>
+            <!-- Report Header -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h1 class="h2 fw-bold text-dark">Compliance Report</h1>
+                    <p class="text-muted">Generated on January 15, 2025 at 2:30 PM</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-outline-primary">
+                        <i class="bi bi-download me-2"></i>
+                        Download PDF
+                    </button>
+                    <button class="btn btn-outline-secondary">
+                        <i class="bi bi-printer me-2"></i>
+                        Print
+                    </button>
+                </div>
+            </div>
 
+            <!-- Report Content -->
             <div class="card">
                 <div class="card-body p-4">
-                    <h1 class="h2 fw-bold text-dark mb-4">Generate Compliance Report</h1>
+                    <!-- Report Summary -->
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-file-text text-primary me-3" style="font-size: 2rem;"></i>
+                                <div>
+                                    <h2 class="h4 fw-bold text-dark mb-1">Report #RPT-2025-001</h2>
+                                    <p class="text-muted mb-0">Legal Metrology Compliance Assessment</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="text-md-end">
+                                <span class="badge bg-success fs-6 px-3 py-2">COMPLIANT</span>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- Product Information -->
                     <div class="bg-light rounded p-4 mb-4">
-                        <h2 class="h5 fw-semibold text-dark mb-3">Product Information</h2>
+                        <h3 class="h5 fw-semibold text-dark mb-3">Product Information</h3>
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label class="form-label fw-medium text-dark small">Product Name</label>
@@ -105,76 +139,120 @@
                                 <label class="form-label fw-medium text-dark small">Platform</label>
                                 <p class="mb-0 text-dark">Amazon</p>
                             </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-medium text-dark small">Date of Manufacture</label>
+                                <p class="mb-0 text-dark">December 15, 2024</p>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-medium text-dark small">Consumer Care Details</label>
+                                <p class="mb-0 text-dark">Nature's Best, Mumbai - 400001, Tel: +91-22-12345678</p>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Report Form -->
-                    <form>
-                        <div class="mb-3">
-                            <label for="license_number" class="form-label fw-medium text-dark">
-                                License Number
-                            </label>
-                            <input 
-                                type="text" 
-                                class="form-control" 
-                                id="license_number" 
-                                name="license_number"
-                                placeholder="Enter your license number"
-                            >
+                    <!-- Compliance Assessment -->
+                    <div class="mb-4">
+                        <h3 class="h5 fw-semibold text-dark mb-3">Compliance Assessment</h3>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Requirement</th>
+                                        <th>Status</th>
+                                        <th>Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>MRP Declaration</td>
+                                        <td><span class="badge bg-success">PASS</span></td>
+                                        <td>MRP clearly displayed as ₹299</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Manufacturer Details</td>
+                                        <td><span class="badge bg-success">PASS</span></td>
+                                        <td>Complete manufacturer information provided</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Net Quantity</td>
+                                        <td><span class="badge bg-success">PASS</span></td>
+                                        <td>Net quantity specified as 500g with proper unit</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Country of Origin</td>
+                                        <td><span class="badge bg-success">PASS</span></td>
+                                        <td>Country of origin clearly mentioned as India</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Consumer Care Details</td>
+                                        <td><span class="badge bg-success">PASS</span></td>
+                                        <td>Complete contact information provided</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date of Manufacture</td>
+                                        <td><span class="badge bg-success">PASS</span></td>
+                                        <td>Manufacturing date clearly mentioned</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
+                    </div>
 
-                        <div class="mb-3">
-                            <label for="violation_type" class="form-label fw-medium text-dark">
-                                Violation Type
-                            </label>
-                            <select class="form-select" id="violation_type" name="violation_type">
-                                <option value="">Select violation type</option>
-                                <option value="missing_mrp">Missing MRP</option>
-                                <option value="missing_manufacturer">Missing Manufacturer Details</option>
-                                <option value="missing_net_quantity">Missing Net Quantity</option>
-                                <option value="missing_country_origin">Missing Country of Origin</option>
-                                <option value="missing_consumer_care">Missing Consumer Care Details</option>
-                                <option value="incorrect_information">Incorrect Information</option>
-                                <option value="misleading_claims">Misleading Claims</option>
-                                <option value="other">Other</option>
-                            </select>
+                    <!-- Inspector Details -->
+                    <div class="mb-4">
+                        <h3 class="h5 fw-semibold text-dark mb-3">Inspector Information</h3>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-medium text-dark small">Inspector Name</label>
+                                <p class="mb-0 text-dark">Rajesh Kumar</p>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-medium text-dark small">License Number</label>
+                                <p class="mb-0 text-dark">LM-2024-MH-001</p>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-medium text-dark small">Department</label>
+                                <p class="mb-0 text-dark">Legal Metrology Department, Maharashtra</p>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-medium text-dark small">Contact</label>
+                                <p class="mb-0 text-dark">rajesh.kumar@legalmetrology.gov.in</p>
+                            </div>
                         </div>
+                    </div>
 
-                        <div class="mb-3">
-                            <label for="severity" class="form-label fw-medium text-dark">
-                                Severity Level
-                            </label>
-                            <select class="form-select" id="severity" name="severity">
-                                <option value="low">Low</option>
-                                <option value="medium" selected>Medium</option>
-                                <option value="high">High</option>
-                            </select>
+                    <!-- Summary and Recommendations -->
+                    <div class="mb-4">
+                        <h3 class="h5 fw-semibold text-dark mb-3">Summary & Recommendations</h3>
+                        <div class="alert alert-success" role="alert">
+                            <div class="d-flex align-items-start">
+                                <i class="bi bi-check-circle-fill me-3 mt-1"></i>
+                                <div>
+                                    <h4 class="alert-heading h6 fw-semibold">Compliance Status: APPROVED</h4>
+                                    <p class="mb-2">The product "Organic Honey" by Nature's Best meets all Legal Metrology requirements as per the Legal Metrology Act, 2009 and Legal Metrology (Packaged Commodities) Rules, 2011.</p>
+                                    <hr>
+                                    <p class="mb-0"><strong>Recommendations:</strong> Continue maintaining current labeling standards. Ensure regular quality checks and compliance monitoring.</p>
+                                </div>
+                            </div>
                         </div>
+                    </div>
 
-                        <div class="mb-4">
-                            <label for="violation_details" class="form-label fw-medium text-dark">
-                                Violation Details *
-                            </label>
-                            <textarea 
-                                class="form-control" 
-                                id="violation_details" 
-                                name="violation_details"
-                                rows="6"
-                                placeholder="Describe the compliance violation in detail..."
-                                required
-                            ></textarea>
+                    <!-- Footer -->
+                    <div class="border-top pt-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="small text-muted mb-0">
+                                    This report is generated by the Legal Metrology Compliance Checker system.
+                                </p>
+                            </div>
+                            <div class="col-md-6 text-md-end">
+                                <p class="small text-muted mb-0">
+                                    Report ID: RPT-2025-001 | Generated: Jan 15, 2025
+                                </p>
+                            </div>
                         </div>
-
-                        <div class="d-flex justify-content-end gap-3">
-                            <a href="dashboard.html" class="btn btn-outline-secondary px-4">
-                                Cancel
-                            </a>
-                            <button type="submit" class="btn btn-primary px-4">
-                                <i class="bi bi-save me-2"></i>
-                                Submit Report
-                            </button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </main>
@@ -186,7 +264,7 @@
         // Simple form submission handler
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Report submitted successfully! Redirecting to dashboard...');
+            alert('Product listed successfully! Redirecting to dashboard...');
             window.location.href = 'dashboard.html';
         });
     </script>
