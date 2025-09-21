@@ -1,0 +1,130 @@
+@@ .. @@
+         <!-- Main Content -->
+         <main class="main-content">
+             <div class="mb-4 d-flex justify-content-between align-items-center">
+                 <h1 class="h2 fw-bold text-dark">Product Compliance Dashboard</h1>
+-                <div class="text-muted small">
+-                    6 products found
++                <div class="d-flex align-items-center gap-3">
++                    <div class="text-muted small">
++                        6 products found
++                    </div>
++                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">
++                        <i class="bi bi-plus me-2"></i>
++                        Add Product
++                    </button>
+                 </div>
+             </div>
+ 
+@@ .. @@
+         </main>
+     </div>
+ 
++    <!-- Add Product Modal -->
++    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
++        <div class="modal-dialog modal-lg">
++            <div class="modal-content">
++                <div class="modal-header">
++                    <h5 class="modal-title" id="addProductModalLabel">Add New Product</h5>
++                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
++                </div>
++                <div class="modal-body">
++                    <form id="addProductForm">
++                        <div class="row g-3">
++                            <div class="col-md-6">
++                                <label for="productName" class="form-label fw-medium">Product Name *</label>
++                                <input type="text" class="form-control" id="productName" placeholder="e.g., Organic Honey" required>
++                            </div>
++                            <div class="col-md-6">
++                                <label for="manufacturer" class="form-label fw-medium">Manufacturer *</label>
++                                <input type="text" class="form-control" id="manufacturer" placeholder="e.g., Nature's Best" required>
++                            </div>
++                            <div class="col-md-6">
++                                <label for="mrp" class="form-label fw-medium">MRP (₹) *</label>
++                                <input type="number" class="form-control" id="mrp" placeholder="299" step="0.01" required>
++                            </div>
++                            <div class="col-md-6">
++                                <label for="netQuantity" class="form-label fw-medium">Net Quantity *</label>
++                                <input type="text" class="form-control" id="netQuantity" placeholder="e.g., 500g, 1L" required>
++                            </div>
++                            <div class="col-md-6">
++                                <label for="countryOfOrigin" class="form-label fw-medium">Country of Origin *</label>
++                                <select class="form-select" id="countryOfOrigin" required>
++                                    <option value="">Select country</option>
++                                    <option value="India">India</option>
++                                    <option value="USA">USA</option>
++                                    <option value="China">China</option>
++                                    <option value="Germany">Germany</option>
++                                    <option value="Japan">Japan</option>
++                                    <option value="Other">Other</option>
++                                </select>
++                            </div>
++                            <div class="col-md-6">
++                                <label for="platform" class="form-label fw-medium">Platform *</label>
++                                <select class="form-select" id="platform" required>
++                                    <option value="">Select platform</option>
++                                    <option value="Amazon">Amazon</option>
++                                    <option value="Flipkart">Flipkart</option>
++                                    <option value="BigBasket">BigBasket</option>
++                                    <option value="Grofers">Grofers</option>
++                                    <option value="Other">Other</option>
++                                </select>
++                            </div>
++                            <div class="col-md-6">
++                                <label for="dateOfManufacture" class="form-label fw-medium">Date of Manufacture</label>
++                                <input type="date" class="form-control" id="dateOfManufacture">
++                            </div>
++                            <div class="col-md-6">
++                                <label for="imageUrl" class="form-label fw-medium">Product Image URL</label>
++                                <input type="url" class="form-control" id="imageUrl" placeholder="https://example.com/image.jpg">
++                            </div>
++                            <div class="col-12">
++                                <label for="description" class="form-label fw-medium">Product Description</label>
++                                <textarea class="form-control" id="description" rows="3" placeholder="Brief description of the product..."></textarea>
++                            </div>
++                            <div class="col-12">
++                                <label for="consumerCareDetails" class="form-label fw-medium">Consumer Care Details</label>
++                                <textarea class="form-control" id="consumerCareDetails" rows="2" placeholder="Company name, address, phone number, email..."></textarea>
++                            </div>
++                        </div>
++                    </form>
++                </div>
++                <div class="modal-footer">
++                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
++                    <button type="button" class="btn btn-primary" onclick="addProduct()">
++                        <i class="bi bi-save me-2"></i>
++                        Add Product
++                    </button>
++                </div>
++            </div>
++        </div>
++    </div>
++
+     <!-- Bootstrap JS -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
++    <script>
++        function addProduct() {
++            // Get form values
++            const productName = document.getElementById('productName').value;
++            const manufacturer = document.getElementById('manufacturer').value;
++            const mrp = document.getElementById('mrp').value;
++            const netQuantity = document.getElementById('netQuantity').value;
++            const countryOfOrigin = document.getElementById('countryOfOrigin').value;
++            const platform = document.getElementById('platform').value;
++            
++            // Basic validation
++            if (!productName || !manufacturer || !mrp || !netQuantity || !countryOfOrigin || !platform) {
++                alert('Please fill in all required fields.');
++                return;
++            }
++            
++            // Show success message
++            alert(`Product "${productName}" has been added successfully!`);
++            
++            // Close modal and reset form
++            bootstrap.Modal.getInstance(document.getElementById('addProductModal')).hide();
++            document.getElementById('addProductForm').reset();
++        }
++    </script>
+ </body>
+ </html>
