@@ -80,17 +80,47 @@
                 <div class="card-body p-4">
                     <form id="addProductForm" name="addProductForm">
                         <div class="row g-4">
-                            <!-- Product Title -->
+                            <!-- Brand Name -->
                             <div class="col-12">
-                                <label for="productTitle" class="form-label fw-medium text-dark">
-                                    Product Title: *
+                                <label for="brandName" class="form-label fw-medium text-dark">
+                                    Brand Name *
                                 </label>
                                 <input 
                                     type="text" 
                                     class="form-control" 
-                                    id="productTitle" 
-                                    name="productTitle"
-                                    placeholder="e.g., Amul Pure Ghee Premium Quality (500g)"
+                                    id="brandName" 
+                                    name="brandName"
+                                    placeholder="e.g., Amul, Tata, Nestle"
+                                    required
+                                >
+                            </div>
+
+                            <!-- Product Name -->
+                            <div class="col-md-6">
+                                <label for="productName" class="form-label fw-medium text-dark">
+                                    Product Name *
+                                </label>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="productName" 
+                                    name="productName"
+                                    placeholder="e.g., Pure Ghee, Basmati Rice"
+                                    required
+                                >
+                            </div>
+
+                            <!-- Key Attribute -->
+                            <div class="col-md-6">
+                                <label for="keyAttribute" class="form-label fw-medium text-dark">
+                                    Key Attribute
+                                </label>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="keyAttribute" 
+                                    name="keyAttribute"
+                                    placeholder="e.g., Premium Quality, Organic"
                                     required
                                 >
                             </div>
@@ -193,40 +223,170 @@
                             <div class="col-12">
                                 <h6 class="fw-semibold text-dark mb-3 mt-4">Manufacturer Details</h6>
                             </div>
-                            <div class="col-12">
-                                <label for="manufacturer" class="form-label fw-medium text-dark">Manufacturer: Name, Full Address *</label>
-                                <textarea 
+                            <div class="col-md-6">
+                                <label for="manufacturerName" class="form-label fw-medium text-dark">Manufacturer Name *</label>
+                                <input 
+                                    type="text" 
                                     class="form-control" 
-                                    id="manufacturer" 
-                                    name="manufacturer"
-                                    rows="3" 
-                                    placeholder="Company Name&#10;Street Address&#10;City, State - PIN Code&#10;Country"
+                                    id="manufacturerName" 
+                                    name="manufacturerName"
+                                    placeholder="Company Name"
                                     required
-                                ></textarea>
+                                >
+                            </div>
+                            <div class="col-md-6">
+                                <label for="manufacturerAddress" class="form-label fw-medium text-dark">Manufacturer Address *</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="manufacturerAddress" 
+                                    name="manufacturerAddress"
+                                    placeholder="Street Address"
+                                    required
+                                >
+                            </div>
+                            <div class="col-md-4">
+                                <label for="manufacturerCity" class="form-label fw-medium text-dark">City *</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="manufacturerCity" 
+                                    name="manufacturerCity"
+                                    placeholder="City"
+                                    required
+                                >
+                            </div>
+                            <div class="col-md-4">
+                                <label for="manufacturerState" class="form-label fw-medium text-dark">State *</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="manufacturerState" 
+                                    name="manufacturerState"
+                                    placeholder="State"
+                                    required
+                                >
+                            </div>
+                            <div class="col-md-4">
+                                <label for="manufacturerPincode" class="form-label fw-medium text-dark">PIN Code *</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="manufacturerPincode" 
+                                    name="manufacturerPincode"
+                                    placeholder="PIN Code"
+                                    required
+                                >
                             </div>
 
                             <!-- Packer -->
                             <div class="col-12">
-                                <label for="packer" class="form-label fw-medium text-dark">Packer: Name, Full Address (if different)</label>
-                                <textarea 
+                                <h6 class="fw-semibold text-dark mb-3 mt-4">Packer Details (if different from manufacturer)</h6>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="packerName" class="form-label fw-medium text-dark">Packer Name</label>
+                                <input 
+                                    type="text" 
                                     class="form-control" 
-                                    id="packer" 
-                                    name="packer"
-                                    rows="3" 
-                                    placeholder="Company Name&#10;Street Address&#10;City, State - PIN Code&#10;Country"
-                                ></textarea>
+                                    id="packerName" 
+                                    name="packerName"
+                                    placeholder="Company Name"
+                                >
+                            </div>
+                            <div class="col-md-6">
+                                <label for="packerAddress" class="form-label fw-medium text-dark">Packer Address</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="packerAddress" 
+                                    name="packerAddress"
+                                    placeholder="Street Address"
+                                >
+                            </div>
+                            <div class="col-md-4">
+                                <label for="packerCity" class="form-label fw-medium text-dark">City</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="packerCity" 
+                                    name="packerCity"
+                                    placeholder="City"
+                                >
+                            </div>
+                            <div class="col-md-4">
+                                <label for="packerState" class="form-label fw-medium text-dark">State</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="packerState" 
+                                    name="packerState"
+                                    placeholder="State"
+                                >
+                            </div>
+                            <div class="col-md-4">
+                                <label for="packerPincode" class="form-label fw-medium text-dark">PIN Code</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="packerPincode" 
+                                    name="packerPincode"
+                                    placeholder="PIN Code"
+                                >
                             </div>
 
                             <!-- Importer -->
                             <div class="col-12">
-                                <label for="importer" class="form-label fw-medium text-dark">Importer: Name, Full Address (if imported)</label>
-                                <textarea 
+                                <h6 class="fw-semibold text-dark mb-3 mt-4">Importer Details (if imported product)</h6>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="importerName" class="form-label fw-medium text-dark">Importer Name</label>
+                                <input 
+                                    type="text" 
                                     class="form-control" 
-                                    id="importer" 
-                                    name="importer"
-                                    rows="3" 
-                                    placeholder="Company Name&#10;Street Address&#10;City, State - PIN Code&#10;Country"
-                                ></textarea>
+                                    id="importerName" 
+                                    name="importerName"
+                                    placeholder="Company Name"
+                                >
+                            </div>
+                            <div class="col-md-6">
+                                <label for="importerAddress" class="form-label fw-medium text-dark">Importer Address</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="importerAddress" 
+                                    name="importerAddress"
+                                    placeholder="Street Address"
+                                >
+                            </div>
+                            <div class="col-md-4">
+                                <label for="importerCity" class="form-label fw-medium text-dark">City</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="importerCity" 
+                                    name="importerCity"
+                                    placeholder="City"
+                                >
+                            </div>
+                            <div class="col-md-4">
+                                <label for="importerState" class="form-label fw-medium text-dark">State</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="importerState" 
+                                    name="importerState"
+                                    placeholder="State"
+                                >
+                            </div>
+                            <div class="col-md-4">
+                                <label for="importerPincode" class="form-label fw-medium text-dark">PIN Code</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="importerPincode" 
+                                    name="importerPincode"
+                                    placeholder="PIN Code"
+                                >
                             </div>
 
                             <!-- Customer Care -->
@@ -282,22 +442,27 @@
             e.preventDefault();
             
             // Get form values
-            const productTitle = document.getElementById('productTitle').value;
+            const brandName = document.getElementById('brandName').value;
+            const productName = document.getElementById('productName').value;
+            const keyAttribute = document.getElementById('keyAttribute').value;
             const genericName = document.getElementById('genericName').value;
             const netQuantity = document.getElementById('netQuantity').value;
             const mrp = document.getElementById('mrp').value;
             const manufactureDate = document.getElementById('manufactureDate').value;
             const bestBefore = document.getElementById('bestBefore').value;
             const countryOfOrigin = document.getElementById('countryOfOrigin').value;
-            const manufacturer = document.getElementById('manufacturer').value;
+            const manufacturerName = document.getElementById('manufacturerName').value;
             const customerCareEmail = document.getElementById('customerCareEmail').value;
             const customerCarePhone = document.getElementById('customerCarePhone').value;
             
             // Basic validation
-            if (!productTitle || !genericName || !netQuantity || !mrp || !manufactureDate || !bestBefore || !countryOfOrigin || !manufacturer || !customerCareEmail || !customerCarePhone) {
+            if (!brandName || !productName || !genericName || !netQuantity || !mrp || !manufactureDate || !bestBefore || !countryOfOrigin || !manufacturerName || !customerCareEmail || !customerCarePhone) {
                 alert('Please fill in all required fields.');
                 return;
             }
+            
+            // Create product title
+            const productTitle = `${brandName} ${productName}${keyAttribute ? ' ' + keyAttribute : ''}`;
             
             // Show success message
             alert(`Product "${productTitle}" has been added successfully!`);
