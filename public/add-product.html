@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product - Legal Metrology Portal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="main-layout">
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container-fluid px-4">
+            <div class="d-flex justify-content-between align-items-center py-3">
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-shield-fill text-primary me-3" style="font-size: 2rem;"></i>
+                    <h1 class="navbar-brand mb-0 text-dark">
+                        Legal Metrology Compliance Checker
+                    </h1>
+                </div>
+                
+                <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center text-muted me-4">
+                        <i class="bi bi-person me-2"></i>
+                        <span class="small">user@example.com</span>
+                    </div>
+                    <a href="auth.html" class="d-flex align-items-center text-muted text-decoration-none">
+                        <i class="bi bi-box-arrow-right me-1"></i>
+                        <span class="small">Sign Out</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <div class="p-4">
+                <ul class="nav flex-column sidebar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" href="dashboard.html">
+                            <i class="bi bi-house me-3"></i>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" href="system-config.html">
+                            <i class="bi bi-gear me-3"></i>
+                            System Config
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" href="settings.html">
+                            <i class="bi bi-sliders me-3"></i>
+                            Settings
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="mb-4">
+                <a href="dashboard.html" class="d-flex align-items-center text-muted text-decoration-none mb-3">
+                    <i class="bi bi-arrow-left me-2"></i>
+                    Back to Dashboard
+                </a>
+                <h1 class="h2 fw-bold text-dark">Add New Product</h1>
+                <p class="text-muted mt-2">Enter product details for Legal Metrology compliance</p>
+            </div>
+
+            <!-- Add Product Form -->
+            <div class="card">
+                <div class="card-body p-4">
+                    <form id="addProductForm" name="addProductForm">
+                        <div class="row g-4">
+                            <!-- Product Title -->
+                            <div class="col-12">
+                                <label for="productTitle" class="form-label fw-medium text-dark">
+                                    Product Title: [Brand] + [Product Name] + [Key Attribute] (Size/Weight/Variant if applicable) *
+                                </label>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="productTitle" 
+                                    name="productTitle"
+                                    placeholder="e.g., Amul Pure Ghee Premium Quality (500g)"
+                                    required
+                                >
+                            </div>
+
+                            <!-- Generic Name -->
+                            <div class="col-md-6">
+                                <label for="genericName" class="form-label fw-medium text-dark">Generic Name *</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="genericName" 
+                                    name="genericName"
+                                    placeholder="e.g., Clarified Butter"
+                                    required
+                                >
+                            </div>
+
+                            <!-- Net Quantity -->
+                            <div class="col-md-6">
+                                <label for="netQuantity" class="form-label fw-medium text-dark">Net Quantity *</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="netQuantity" 
+                                    name="netQuantity"
+                                    placeholder="e.g., 500g, 1kg, 250ml"
+                                    required
+                                >
+                            </div>
+
+                            <!-- MRP -->
+                            <div class="col-md-6">
+                                <label for="mrp" class="form-label fw-medium text-dark">MRP (Inclusive of All Taxes) *</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">₹</span>
+                                    <input 
+                                        type="number" 
+                                        class="form-control" 
+                                        id="mrp" 
+                                        name="mrp"
+                                        placeholder="299.00"
+                                        min="0" 
+                                        step="0.01" 
+                                        required
+                                    >
+                                </div>
+                            </div>
+
+                            <!-- Month & Year of Manufacture -->
+                            <div class="col-md-6">
+                                <label for="manufactureDate" class="form-label fw-medium text-dark">Month & Year of Manufacture / Packing *</label>
+                                <input 
+                                    type="month" 
+                                    class="form-control" 
+                                    id="manufactureDate" 
+                                    name="manufactureDate"
+                                    required
+                                >
+                            </div>
+
+                            <!-- Best Before / Expiry -->
+                            <div class="col-md-6">
+                                <label for="bestBefore" class="form-label fw-medium text-dark">Best Before / Expiry *</label>
+                                <input 
+                                    type="date" 
+                                    class="form-control" 
+                                    id="bestBefore" 
+                                    name="bestBefore"
+                                    required
+                                >
+                            </div>
+
+                            <!-- Country of Origin -->
+                            <div class="col-md-6">
+                                <label for="countryOfOrigin" class="form-label fw-medium text-dark">Country of Origin *</label>
+                                <select class="form-select" id="countryOfOrigin" name="countryOfOrigin" required>
+                                    <option value="">Select country</option>
+                                    <option value="India">India</option>
+                                    <option value="USA">USA</option>
+                                    <option value="China">China</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <!-- Size / Dimension / Colour -->
+                            <div class="col-12">
+                                <label for="sizeDimensionColour" class="form-label fw-medium text-dark">Size / Dimension / Colour</label>
+                                <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="sizeDimensionColour" 
+                                    name="sizeDimensionColour"
+                                    placeholder="e.g., 15cm x 10cm x 5cm, Red, Large"
+                                >
+                            </div>
+
+                            <!-- Manufacturer -->
+                            <div class="col-12">
+                                <h6 class="fw-semibold text-dark mb-3 mt-4">Manufacturer Details</h6>
+                            </div>
+                            <div class="col-12">
+                                <label for="manufacturer" class="form-label fw-medium text-dark">Manufacturer: Name, Full Address *</label>
+                                <textarea 
+                                    class="form-control" 
+                                    id="manufacturer" 
+                                    name="manufacturer"
+                                    rows="3" 
+                                    placeholder="Company Name&#10;Street Address&#10;City, State - PIN Code&#10;Country"
+                                    required
+                                ></textarea>
+                            </div>
+
+                            <!-- Packer -->
+                            <div class="col-12">
+                                <label for="packer" class="form-label fw-medium text-dark">Packer: Name, Full Address (if different)</label>
+                                <textarea 
+                                    class="form-control" 
+                                    id="packer" 
+                                    name="packer"
+                                    rows="3" 
+                                    placeholder="Company Name&#10;Street Address&#10;City, State - PIN Code&#10;Country"
+                                ></textarea>
+                            </div>
+
+                            <!-- Importer -->
+                            <div class="col-12">
+                                <label for="importer" class="form-label fw-medium text-dark">Importer: Name, Full Address (if imported)</label>
+                                <textarea 
+                                    class="form-control" 
+                                    id="importer" 
+                                    name="importer"
+                                    rows="3" 
+                                    placeholder="Company Name&#10;Street Address&#10;City, State - PIN Code&#10;Country"
+                                ></textarea>
+                            </div>
+
+                            <!-- Customer Care -->
+                            <div class="col-12">
+                                <h6 class="fw-semibold text-dark mb-3 mt-4">Customer Care Details</h6>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="customerCareEmail" class="form-label fw-medium text-dark">Customer Care Email *</label>
+                                <input 
+                                    type="email" 
+                                    class="form-control" 
+                                    id="customerCareEmail" 
+                                    name="customerCareEmail"
+                                    placeholder="support@company.com"
+                                    required
+                                >
+                            </div>
+                            <div class="col-md-6">
+                                <label for="customerCarePhone" class="form-label fw-medium text-dark">Customer Care Phone Number *</label>
+                                <input 
+                                    type="tel" 
+                                    class="form-control" 
+                                    id="customerCarePhone" 
+                                    name="customerCarePhone"
+                                    placeholder="+91-22-12345678"
+                                    required
+                                >
+                            </div>
+
+                            <!-- Submit Buttons -->
+                            <div class="col-12 mt-5">
+                                <div class="d-flex justify-content-end gap-3">
+                                    <a href="dashboard.html" class="btn btn-secondary px-4">
+                                        Cancel
+                                    </a>
+                                    <button type="submit" class="btn btn-primary px-4">
+                                        <i class="bi bi-save me-2"></i>
+                                        Add Product
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('addProductForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const productTitle = document.getElementById('productTitle').value;
+            const genericName = document.getElementById('genericName').value;
+            const netQuantity = document.getElementById('netQuantity').value;
+            const mrp = document.getElementById('mrp').value;
+            const manufactureDate = document.getElementById('manufactureDate').value;
+            const bestBefore = document.getElementById('bestBefore').value;
+            const countryOfOrigin = document.getElementById('countryOfOrigin').value;
+            const manufacturer = document.getElementById('manufacturer').value;
+            const customerCareEmail = document.getElementById('customerCareEmail').value;
+            const customerCarePhone = document.getElementById('customerCarePhone').value;
+            
+            // Basic validation
+            if (!productTitle || !genericName || !netQuantity || !mrp || !manufactureDate || !bestBefore || !countryOfOrigin || !manufacturer || !customerCareEmail || !customerCarePhone) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Show success message
+            alert(`Product "${productTitle}" has been added successfully!`);
+            
+            // Redirect to dashboard
+            window.location.href = 'dashboard.html';
+        });
+    </script>
+</body>
+</html>
